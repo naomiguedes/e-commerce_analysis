@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce Sales Analysis </title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.plot,ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Sales Analysis</h1>
+        <div class="chart-container mb-4">
+            <h2 class="text-center">Quarterly Sales Trend in 2024</h2>
+            <div>{{quarterly_sales_html|safe}}</div>
+        </div>
+        <div class="chart-container mb-4">
+            <h2 class="text-center">BigQuery E-commerce Sales Over Time</h2>
+            <div>{{ line_graph_html|safe }}</div>
+        </div>
+        <div class="chart-container mb-4">
+            <h2 class="text-center">Census vs BigQuery E-commerce Sales</h2>
+            <div>{{ bar_graph_html|safe }}</div>
+        </div>
+        <div class="chart-container mb-4">
+            <h2 class="text center">2024 E-Commerce Sales Growth Comparison</h2>
+            <div>{{ growth_graph_html|safe }}</div>
+        </div>
+    </div>
+</body>
+</html>
